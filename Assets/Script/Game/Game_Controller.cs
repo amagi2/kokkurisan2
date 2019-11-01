@@ -6,20 +6,20 @@ public class Game_Controller : MonoBehaviour
 {
     public GameObject Coin;
     public GameObject Paper;
-    string Tap_GameObject;
+    string Tap_Object;
 
     void Tap()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Tap_GameObject = null;
+            Tap_Object = null;
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit2D = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction);
 
             if (hit2D)
             {
-                Tap_GameObject = hit2D.transform.gameObject.name;
+                Tap_Object = hit2D.transform.gameObject.name;
             }
         }
     }
@@ -28,7 +28,7 @@ public class Game_Controller : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            if (Tap_GameObject == "Coin")
+            if (Tap_Object == "Coin")
             {
                 Paper.gameObject.SetActive(true);
                 Coin.GetComponent<Coin_Controller>().Move_Coin();

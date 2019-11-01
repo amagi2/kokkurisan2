@@ -5,19 +5,4 @@ using UnityEngine.SceneManagement;
 
 public class Skip: MonoBehaviour
 {
-    public void OnClick()
-    {
-        SceneManager.LoadScene("GameScene");
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
