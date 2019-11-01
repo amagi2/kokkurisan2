@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class Movie_controller
-    : MonoBehaviour
+public class Movie_controller: MonoBehaviour
 {
+    public GameObject SkipButton;
+    bool Movie_Play = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,16 @@ public class Movie_controller
             videoPlayer.Pause();
         if (Input.GetMouseButtonDown(0))
         {
-
+            if (Movie_Play == true)
+            {
+                videoPlayer.Pause();
+                Movie_Play = false;
+                
+            }
+            else{
+                videoPlayer.Play();
+                Movie_Play = true;
+            }
         }
     }
 }
