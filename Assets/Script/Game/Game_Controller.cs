@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Game_Controller : MonoBehaviour
 {
     public GameObject Coin;//Coin_Controller
     public GameObject Paper;//文字盤
+    public GameObject Time_Ui;
     string Tap_Object;//タップ先のオブジェクト
     string Get_Char;//Coin_Controllerから受け取る
 
     [SerializeField]
     private GameObject[] Life = new GameObject[3];//LifeのUI
     int life;//残りLife
+    float Set_Time = 60;
+    float Time_Num;
 
 
     //タップ座標の取得
@@ -84,14 +88,28 @@ public class Game_Controller : MonoBehaviour
         }
     }
 
+
+    void Time_UI()
+    {
+        if (Time_Num >= 0)
+        {
+            Time_Num = Set_Time - Time.time;
+            Time_Num = Mathf.Floor(Time_Num);
+            Text Time_text = Time_Ui.GetComponent<Text>();
+            Time_text.text = "残り時間 " + Time_Num;
+        }
+    }
+
     //初期設定
     void Start()
     {
+        Time_Num = Set_Time;
         life = 3;
     }
 
     void Update()
     {
+        Time_UI();
         Tap();
         Tap_Command();
     }

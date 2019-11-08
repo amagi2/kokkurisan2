@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class Char_Controller : MonoBehaviour
 {
-    float Change_Scale = 0.01f;
+    float Add_Scale = 0.01f;
+    float Change_Scale = 0.2f;
+    float Add_Pos;
+    float Change_Pos;
 
     void Scale()
     {
         Transform mytransform = this.transform;
         Vector3 localScale = mytransform.localScale;
-        localScale.x += Change_Scale;
-        localScale.y += Change_Scale;
-        mytransform.localScale = localScale;
-
-        if (localScale.x >= 0.15 || localScale.x <= 0.05) 
+        if (localScale.x <= Change_Scale)
         {
-            Change_Scale *= -1;
+            localScale.x += Add_Scale;
+            localScale.y += Add_Scale;
+            mytransform.localScale = localScale;
         }
     }
+
+    /*void C_Move()
+    {
+        Transform mytransform = this.transform;
+        Vector3 worldPos = mytransform.position;
+        //if()
+    }*/
 
     void Return_Scale()
     {
