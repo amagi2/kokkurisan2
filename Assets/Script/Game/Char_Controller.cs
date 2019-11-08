@@ -62,5 +62,5 @@ public class Char_Controller : MonoBehaviour
     {
         
     }
-    //テスト
+    // Test
 }
