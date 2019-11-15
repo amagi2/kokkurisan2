@@ -21,7 +21,7 @@ public class Char_Controller : MonoBehaviour
         }
     }
 
-    /*void C_Move()
+    /*void Move()
     {
         Transform mytransform = this.transform;
         Vector3 worldPos = mytransform.position;
@@ -40,7 +40,6 @@ public class Char_Controller : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         Scale();
-
         if (Input.GetMouseButtonUp(0))
         {
             Return_Scale();
