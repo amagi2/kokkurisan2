@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Coin_Controller : MonoBehaviour
 {
-    private Vector3 Mouse_Pos;//マウスの座標
+    private Vector3 Tap_Pos;//タップ座標
     private Vector3 WorldPointPos;//画面を起点とした世界座標
     public string Tap_Char;//選択した文字をゲームコントローラーに送る
 
     //コイン移動
     public void Move_Coin()
     {
-        //マウスの座標を確認
-        Mouse_Pos = Input.mousePosition;
-        WorldPointPos = Camera.main.ScreenToWorldPoint(Mouse_Pos);
-
+        Debug.Log("呼ばれてるよ");
+        Touch t = Input.GetTouch(0);
+        //タップ確認
+        Tap_Pos = new Vector3(t.position.x, t.position.y, 0);
+        WorldPointPos = Camera.main.ScreenToWorldPoint(Tap_Pos);
         //Z軸は固定
         WorldPointPos.z = 0;
-
         //コインをマウスの座標に確認
         gameObject.transform.position = WorldPointPos;
     }
