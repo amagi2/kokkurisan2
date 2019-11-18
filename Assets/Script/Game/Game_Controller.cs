@@ -7,35 +7,77 @@ public class Game_Controller : MonoBehaviour
 {
     public GameObject Coin;//Coin_Controller
     public GameObject Paper;//文字盤
-    string Tap_Object;//タップ先のオブジェクト
-    string Get_Char;//Coin_Controllerから受け取る
+    private string Tap_Object;//タップ先のオブジェクト
+    private string Get_Char;//Coin_Controllerから受け取る
 
-    string[] Answer ={
-        "A","I","U","E","O",
-        "KA","KI","KU","KE","KO",
-        "SA","SI","SU","SE","SO",
-        "TA","TI","TU","TE","TO",
-        "NA","NI","NU","NE","NO",
-        "HA","HI","HU","HE","HO",
-        "MA","MI","MU","ME","MO",
-        "YA","YU","YO",
-        "RA","RI","RU","RE","RO",
-        "WA","WO","N"
-    };//答え
-    int i;
+    [SerializeField]
+    private GameObject[] Question = new GameObject[18];//問題（オブジェクト）
+    [SerializeField]
+    private GameObject[] Char = new GameObject[18];//答え（表示）
+    private int Q_Num;//問題（設定）
 
-
+    //答え（選択）
+    private string[] Answer ={
+        /*0*/"A","I","U","E","O",
+        /*5*/"KA","KI","KU","KE","KO",
+        /*10*/"SA","SI","SU","SE","SO",
+        /*15*/"TA","TI","TU","TE","TO",
+        /*20*/"NA","NI","NU","NE","NO",
+        /*25*/"HA","HI","HU","HE","HO",
+        /*30*/"MA","MI","MU","ME","MO",
+        /*35*/"YA","YU","YO",
+        /*38*/"RA","RI","RU","RE","RO",
+        /*43*/"WA","WO","N"
+    };
+    private int[] A_Num ={
+        /*SU*/12,/*I*/1,/*YU*/36
+    };
+    /*private bool[] Answer_Count =
+    {
+        false,false,true
+    };*/
 
     [SerializeField]
     private GameObject[] Life = new GameObject[3];//LifeのUI
-    int life;//残りLife
+    private int life;//残りLife
 
+    public static int Scene_Count = 1;//シーン何回目か
+
+    //問題設定
     void Answer_Set()
     {
-
-        i = Random.Range(0, 45);
-        Debug.Log(i);
+        //何シーンか確認
+        //シーンに合った問題をランダムで選ぶ
+        switch (Scene_Count)
+        {
+            case 1:
+                Q_Num = Random.Range(0, 3);
+                break;
+            case 2:
+                Q_Num = Random.Range(0, 3) + 3;
+                break;
+            case 3:
+                Q_Num = Random.Range(0, 3) + 6;
+                break;
+            case 4:
+                Q_Num = Random.Range(0, 3) + 9;
+                break;
+            case 5:
+                Q_Num = Random.Range(0, 3) + 12;
+                break;
+            case 6:
+                Q_Num = Random.Range(0, 3) + 15;
+                break;
+        }
+        //選んだ問題を表示する
+        Question[Q_Num].gameObject.SetActive(true);
+        
     }
+
+    /*void Next_Char()
+    {
+
+    }*/
 
 
     //タップ座標の取得
@@ -80,14 +122,14 @@ public class Game_Controller : MonoBehaviour
             
 
             //合ってたら
-            if (Get_Char == Answer[i])
+            if (Get_Char == Answer[A_Num[Q_Num]])
             {
-                //何かしらの処理
-                Debug.Log("正解");//仮
+                //文字の表示
+                Char[Q_Num].gameObject.SetActive(true);
                 Get_Char = null;
             }
             //違ったら
-            if (Get_Char != null && Get_Char != Answer[i])
+            if (Get_Char != null && Get_Char != Answer[A_Num[Q_Num]])
             {
                 //ライフ減らす
                 life -= 1;

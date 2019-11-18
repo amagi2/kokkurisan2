@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Char_Controller : MonoBehaviour
 {
-    float Add_Scale = 0.01f;
-    float Change_Scale = 0.2f;
-    float Add_Pos;
-    float Get_Change_Pos;
-    string test;
-
+    private float Add_Scale = 0.01f;
+    private float Change_Scale = 0.2f;
+    private float width;
+    private float height;
 
     void Scale()
     {
@@ -22,13 +21,6 @@ public class Char_Controller : MonoBehaviour
             mytransform.localScale = localScale;
         }
     }
-
-    /*void Move()
-    {
-        Transform mytransform = this.transform;
-        Vector3 worldPos = mytransform.position;
-        //if()
-    }*/
 
     void Return_Scale()
     {
@@ -56,7 +48,7 @@ public class Char_Controller : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
