@@ -10,9 +10,32 @@ public class Game_Controller : MonoBehaviour
     string Tap_Object;//タップ先のオブジェクト
     string Get_Char;//Coin_Controllerから受け取る
 
+    string[] Answer ={
+        "A","I","U","E","O",
+        "KA","KI","KU","KE","KO",
+        "SA","SI","SU","SE","SO",
+        "TA","TI","TU","TE","TO",
+        "NA","NI","NU","NE","NO",
+        "HA","HI","HU","HE","HO",
+        "MA","MI","MU","ME","MO",
+        "YA","YU","YO",
+        "RA","RI","RU","RE","RO",
+        "WA","WO","N"
+    };//答え
+    int i;
+
+
+
     [SerializeField]
     private GameObject[] Life = new GameObject[3];//LifeのUI
     int life;//残りLife
+
+    void Answer_Set()
+    {
+
+        i = Random.Range(0, 45);
+        Debug.Log(i);
+    }
 
 
     //タップ座標の取得
@@ -51,19 +74,20 @@ public class Game_Controller : MonoBehaviour
                 Coin.GetComponent<Coin_Controller>().Return_Coin();
                 //コインと重なってたObjectを確認する
                 Get_Char = Coin.GetComponent<Coin_Controller>().Tap_Char;
+                Debug.Log(Get_Char);
                 Tap_Object = null;
             }
             
 
             //合ってたら
-            if (Get_Char == "答え")
+            if (Get_Char == Answer[i])
             {
                 //何かしらの処理
                 Debug.Log("正解");//仮
                 Get_Char = null;
             }
             //違ったら
-            if (Get_Char != null && Get_Char != "答え")
+            if (Get_Char != null && Get_Char != Answer[i])
             {
                 //ライフ減らす
                 life -= 1;
@@ -79,18 +103,12 @@ public class Game_Controller : MonoBehaviour
             Coin.GetComponent<Coin_Controller>().Null();
         }
     }
-    
-
-    
-
-
-    
-    
 
     //初期設定
     void Start()
     {
         life = 3;
+        Answer_Set();
     }
 
     void Update()

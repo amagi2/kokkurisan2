@@ -18,14 +18,14 @@ public class Coin_Controller : MonoBehaviour
         WorldPointPos = Camera.main.ScreenToWorldPoint(Tap_Pos);
         //Z軸は固定
         WorldPointPos.z = 0;
-        //コインをマウスの座標に確認
+        //コインをタップの座標に移動
         gameObject.transform.position = WorldPointPos;
     }
 
     //コインを定位置に戻す
     public void Return_Coin()
     {
-        gameObject.transform.position = new Vector3(0, 0, 0);
+        gameObject.transform.position = new Vector3(0, -1, 0);
     }
 
     //重なってる間は名前を取得

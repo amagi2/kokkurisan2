@@ -7,7 +7,9 @@ public class Char_Controller : MonoBehaviour
     float Add_Scale = 0.01f;
     float Change_Scale = 0.2f;
     float Add_Pos;
-    float Change_Pos;
+    float Get_Change_Pos;
+    string test;
+
 
     void Scale()
     {
@@ -61,5 +63,4 @@ public class Char_Controller : MonoBehaviour
     {
         
     }
-    // Test
 }
