@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoBehaviour
+public class GameOverGameOver : MonoBehaviour
 {
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonUp(0))
         {
-            SceneManager.LoadScene("MovieScene");
-            Debug.Log("遷移しました。");
+            SceneManager.LoadScene("TitleScene");
         }
     }
 }

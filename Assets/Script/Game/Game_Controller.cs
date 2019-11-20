@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game_Controller : MonoBehaviour
 {
@@ -73,14 +74,10 @@ public class Game_Controller : MonoBehaviour
         Question[Q_Num].gameObject.SetActive(true);
         
     }
-
-    /*void Next_Char()
-    {
-
-    }*/
+    
 
 
-    //タップ座標の取得
+    //タップ
     void Tap()
     {
         //タップを認識
@@ -127,6 +124,7 @@ public class Game_Controller : MonoBehaviour
                 //文字の表示
                 Char[Q_Num].gameObject.SetActive(true);
                 Get_Char = null;
+                SceneManager.LoadScene("MovieScene");
             }
             //違ったら
             if (Get_Char != null && Get_Char != Answer[A_Num[Q_Num]])
@@ -139,7 +137,7 @@ public class Game_Controller : MonoBehaviour
                 if (life == 0)
                 {
                     //何かしらの処理
-                    Debug.Log("あ；おえんｈｃｓｒぎうｍんｓｃｌｓｆんｋｇｃんｓｌｍｇんｂｓｎ");//仮
+                    SceneManager.LoadScene("GameOverScene");
                 }
             }
             Coin.GetComponent<Coin_Controller>().Null();
