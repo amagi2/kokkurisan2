@@ -1,4 +1,10 @@
-Library/
 .vs/
+Library/
 obj/
-*.csproj
+Kokkurisan.csproj
+Assembly-CSharp.csproj
+Unity.CollabProxy.Editor.csproj
+Unity.Analytics.DataPrivacy.csproj
+Unity.PackageManagerUI.Editor.csproj
+Unity.TextMeshPro.csproj
+Unity.TextMeshPro.Editor.csproj

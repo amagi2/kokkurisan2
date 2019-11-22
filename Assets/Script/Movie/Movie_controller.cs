@@ -7,14 +7,13 @@ using UnityEngine.SceneManagement;
 public class Movie_controller: MonoBehaviour
 {
     public GameObject SkipButton;//Skipボタン
-    bool Movie_Play = true;//動画の静止判定
+    bool Movie_Play;//動画の静止判定
 
     //Skipボタンを押したら    
     public void OnClick()
     {
         SceneManager.LoadScene("GameScene");
     }
-
 
     void Start()
     {
@@ -27,18 +26,26 @@ public class Movie_controller: MonoBehaviour
         //タップを離したら
         if (Input.GetMouseButtonUp(0))
         {
-            if (Movie_Play == true)
+            if (videoPlayer.isPlaying)
             {
                 videoPlayer.Pause();
                 Movie_Play = false;
                 SkipButton.gameObject.SetActive(true);
             }
-            else if (Movie_Play == false)
+            else if (!videoPlayer.isPlaying)
             {
                 videoPlayer.Play();
                 Movie_Play = true;
                 SkipButton.gameObject.SetActive(false);
             }
+        }
+        if (videoPlayer.isPlaying)
+        {
+            Movie_Play = true;
+        }
+        if (!videoPlayer.isPlaying && Movie_Play == true)
+        {
+            SceneManager.LoadScene("GameScene");
         }
     }
 }
