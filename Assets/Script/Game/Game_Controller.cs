@@ -8,6 +8,8 @@ public class Game_Controller : MonoBehaviour
 {
     public GameObject Coin;//Coin_Controller
     public GameObject Paper;//文字盤
+    public GameObject Game_SE;//SE
+
     private string Tap_Object;//タップ先のオブジェクト
     private string Get_Char;//Coin_Controllerから受け取る
 
@@ -15,6 +17,7 @@ public class Game_Controller : MonoBehaviour
     private GameObject[] Question = new GameObject[18];//問題（オブジェクト）
     [SerializeField]
     private GameObject[] Char = new GameObject[18];//答え（表示）
+
     private int Q_Num;//問題（設定）
 
     //答え（選択）
@@ -31,7 +34,9 @@ public class Game_Controller : MonoBehaviour
         /*43*/"WA","WO","N"
     };
     private int[] A_Num ={
-        /*SU*/12,/*I*/1,/*YU*/36
+        /*SU*/12,
+        /*I*/1,
+        /*YU*/36
     };
     /*private bool[] Answer_Count =
     {
@@ -43,6 +48,8 @@ public class Game_Controller : MonoBehaviour
     private int life;//残りLife
 
     public static int Scene_Count = 1;//シーン何回目か
+
+    bool G_SE = true;
 
     //問題設定
     void Answer_Set()
@@ -72,7 +79,6 @@ public class Game_Controller : MonoBehaviour
         }
         //選んだ問題を表示する
         Question[Q_Num].gameObject.SetActive(true);
-        
     }
     
 
@@ -100,6 +106,12 @@ public class Game_Controller : MonoBehaviour
             if (Tap_Object == "Coin")
             {
                 //
+                if (G_SE)
+                {
+                    Game_SE.GetComponent<Game_SE>().Coin_SE();
+                    Game_SE.GetComponent<Game_SE>().Paper_SE();
+                    G_SE = false;
+                }
                 Paper.gameObject.SetActive(true);
                 Coin.GetComponent<Coin_Controller>().Move_Coin();
             }
@@ -107,37 +119,49 @@ public class Game_Controller : MonoBehaviour
 
             //なんかだったら
 
+            //画面から離したとき
             if (Input.GetMouseButtonUp(0))
             {
                 Paper.gameObject.SetActive(false);
                 Coin.GetComponent<Coin_Controller>().Return_Coin();
+
                 //コインと重なってたObjectを確認する
                 Get_Char = Coin.GetComponent<Coin_Controller>().Tap_Char;
-                Debug.Log(Get_Char);
+                
                 Tap_Object = null;
-            }
-            
+                G_SE = true;
 
-            //合ってたら
-            if (Get_Char == Answer[A_Num[Q_Num]])
-            {
-                //文字の表示
-                Char[Q_Num].gameObject.SetActive(true);
-                Get_Char = null;
-                SceneManager.LoadScene("MovieScene");
-            }
-            //違ったら
-            if (Get_Char != null && Get_Char != Answer[A_Num[Q_Num]])
-            {
-                //ライフ減らす
-                life -= 1;
-                Life[life].gameObject.SetActive(false);
-                Get_Char = null;
-                //ライフがなくなったら
-                if (life == 0)
+
+                //合ってたら
+                if (Get_Char == Answer[A_Num[Q_Num]])
                 {
-                    //何かしらの処理
-                    SceneManager.LoadScene("GameOverScene");
+                    //SE
+                    Game_SE.GetComponent<Game_SE>().Char_SE();
+
+                    //文字の表示
+                    Char[Q_Num].gameObject.SetActive(true);
+                    Char[Q_Num].GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.5f);
+                    Get_Char = null;
+                    //
+                    SceneManager.LoadScene("MovieScene");
+                }
+                //違ったら
+                else if (Get_Char != null && Get_Char != Answer[A_Num[Q_Num]])
+                {
+                    //SE
+                    Game_SE.GetComponent<Game_SE>().Life_SE();
+
+                    //ライフ減らす
+                    life -= 1;
+                    Life[life].gameObject.SetActive(false);
+                    Get_Char = null;
+
+                    //ライフがなくなったら
+                    if (life == 0)
+                    {
+                        //何かしらの処理
+                        SceneManager.LoadScene("GameOverScene");
+                    }
                 }
             }
             Coin.GetComponent<Coin_Controller>().Null();

@@ -20,7 +20,6 @@ public class Time_Controller : MonoBehaviour
             Time_Num = Mathf.Floor(Time_Num);
             Text Time_text = Time_Ui.GetComponent<Text>();
             Time_text.text = "残り時間 " + Time_Num;
-            Debug.Log(Time.deltaTime);
         }
         else
         {
