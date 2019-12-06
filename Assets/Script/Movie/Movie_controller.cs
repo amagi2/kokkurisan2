@@ -39,13 +39,13 @@ public class Movie_controller: MonoBehaviour
                 SkipButton.gameObject.SetActive(false);
             }
         }
-        if (videoPlayer.isPlaying)
+        /*if (videoPlayer.isPlaying)
         {
             Movie_Play = true;
-        }
-        if (!videoPlayer.isPlaying && Movie_Play == true)
+        }*/
+        /*if (!videoPlayer.isPlaying && Movie_Play == true)
         {
             SceneManager.LoadScene("GameScene");
-        }
+        }*/
     }
 }

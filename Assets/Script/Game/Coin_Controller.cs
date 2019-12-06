@@ -25,7 +25,7 @@ public class Coin_Controller : MonoBehaviour
     //コインを定位置に戻す
     public void Return_Coin()
     {
-        gameObject.transform.position = new Vector3(0, -1, 0);
+        gameObject.transform.position = new Vector3(-3, -1, 0);
     }
 
     //重なってる間は名前を取得

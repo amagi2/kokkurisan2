@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,13 +6,13 @@ using UnityEngine.Rendering;
 
 public class Char : MonoBehaviour
 {
-    private float Add_Scale = 0.1f; //ÉTÉCÉYïœçXíl
-    private float Change_Scale = 2f;//ÉTÉCÉYè„å¿
+    private SortingGroup sortingGroup;
+    private float Add_Scale = 0.1f;
+    private float Change_Scale = 2f;
+    private float Add_Pos = 2f;
+    private float Change_Pos = 7f;
+    private int Layer_Num = 2;
 
-    private float Add_Pos = 2f;     //ç¿ïWïœçXíl
-    private float Change_Pos = 7f;  //ç¿ïWè„å¿
-    
-    //ï∂éöÉTÉCÉYïœçX
     public void Scale()
     {
         Transform mytransform = this.transform;
@@ -24,16 +24,6 @@ public class Char : MonoBehaviour
             mytransform.localScale = localScale;
         }
     }
-    public void ReScale()
-    {
-        Transform mytransform = this.transform;
-        Vector3 localScale = mytransform.localScale;
-        localScale.x = 1f;
-        localScale.y = 1f;
-        mytransform.localScale = localScale;
-    }
-
-    //ï∂éöà⁄ìÆ
     public void Move()
     {
         Transform mytransform = this.transform;
@@ -45,6 +35,15 @@ public class Char : MonoBehaviour
             mytransform.localPosition = localPos;
         }
     }
+
+    public void ReScale()
+    {
+        Transform mytransform = this.transform;
+        Vector3 localScale = mytransform.localScale;
+        localScale.x = 1f;
+        localScale.y = 1f;
+        mytransform.localScale = localScale;
+    }
     public void ReMove()
     {
         Transform mytransform = this.transform;
@@ -54,19 +53,22 @@ public class Char : MonoBehaviour
         mytransform.localPosition = localPos;
     }
 
-    //ÉåÉCÉÑÅ[ïœçX
     public void Layer()
     {
-        GetComponent<SpriteRenderer>().sortingOrder = 4;
+        Debug.Log(sortingGroup);
+        sortingGroup.sortingOrder = Layer_Num + 1;
     }
     public void ReLayer()
     {
-        GetComponent<SpriteRenderer>().sortingOrder = 2;
+        sortingGroup.sortingOrder = Layer_Num;
     }
+
 
     void Start()
     {
-        
+        Debug.Log(this.gameObject);
+        sortingGroup = this.gameObject.GetComponent<SortingGroup>();
+        Debug.Log(sortingGroup);
     }
 
     void Update()

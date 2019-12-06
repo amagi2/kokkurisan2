@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Game_SE : MonoBehaviour
 {
-    public AudioClip Coin;
-    public AudioClip Paper;
-    public AudioClip Life;
-    public AudioClip Char;
+    public AudioClip Paper;//紙の音
+    public AudioClip Life;//ライフが減る音
+    public AudioClip Char;//文字が浮き出る音
 
     AudioSource audioSource;
 
@@ -17,10 +16,7 @@ public class Game_SE : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Coin_SE()
-    {
-        audioSource.PlayOneShot(Coin);
-    }
+    
     public void Paper_SE()
     {
         audioSource.PlayOneShot(Paper);
