@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Time_Controller : MonoBehaviour
 {
     public GameObject Time_Ui;
-    float Set_Time = 60;
+    float Set_Time = 30;
     float Time_Num;
     float time;
 

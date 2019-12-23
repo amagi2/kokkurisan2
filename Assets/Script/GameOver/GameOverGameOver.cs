@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverGameOver : MonoBehaviour
 {
+    public GameObject Fade;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class GameOverGameOver : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            SceneManager.LoadScene("TitleScene");
+            Fade.gameObject.SetActive(true);
         }
     }
 }

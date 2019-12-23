@@ -9,9 +9,15 @@ public class Game_Controller : MonoBehaviour
     public GameObject Coin;     //Coin_Controller
     public GameObject Paper;    //文字盤
     public GameObject Game_SE;  //SE
+<<<<<<< HEAD
     public GameObject G;        //G
 
     private string Tap_Object;  //タップ先のオブジェクト
+=======
+
+    private string Tap_Object;  //タップ先のオブジェクト
+    private string Tap_Name;    //タップ先のオブジェクトの名前
+>>>>>>> ootsuka/mock
     private string Get_Char;    //Coin_Controllerから受け取る
 
     [SerializeField]
@@ -34,6 +40,7 @@ public class Game_Controller : MonoBehaviour
         /*38*/"RA","RI","RU","RE","RO", /*42*/
         /*43*/"WA","WO","N"             /*45*/
     };
+<<<<<<< HEAD
     //答え（設定）
     private int[] A_Num ={
         /*SU*/12,
@@ -41,6 +48,15 @@ public class Game_Controller : MonoBehaviour
         /*YU*/36
     };
 
+=======
+
+    //答え（設定）
+    private int[] A_Num ={
+        11,2,37
+    };
+
+    //透過関連
+>>>>>>> ootsuka/mock
     SpriteRenderer spriteRenderer;
     float Add_a = 0.05f;
     float a;
@@ -56,9 +72,41 @@ public class Game_Controller : MonoBehaviour
     private GameObject[] Life = new GameObject[3];  //LifeのUI
     private int life;                               //残りLife
 
+<<<<<<< HEAD
     public static int Scene_Count;//シーン何回目か
 
     bool G_SE = true;
+=======
+    //public static int Scene_Count;//シーン何回目か
+    public static int Scene_Count = 1;//体験版
+
+    bool G_SE = true;
+
+    [SerializeField]
+    private GameObject Fade;
+
+    [SerializeField]
+    private GameObject[] G = new GameObject[15];
+    private string[] G_Name = { "G (0)", "G (1)", "G (2)", "G (3)", "G (4)", "G (5)", "G (6)", "G (7)", "G (8)", "G (9)", "G (10)", "G (11)", "G (12)", "G (13)", "G (14)" };
+    private int G_Num;
+
+    [SerializeField]
+    private GameObject[] Char_G = new GameObject[15];
+    private string[] Char_G_Name = { "Char_G (0)", "Char_G (1)", "Char_G (2)", "Char_G (3)", "Char_G (4)", "Char_G (5)", "Char_G (6)", "Char_G (7)", "Char_G (8)", "Char_G (9)", "Char_G (10)", "Char_G (11)", "Char_G (12)", "Char_G (13)", "Char_G (14)" };
+    private int Char_G_Num;
+
+    
+
+    //ゴキブリ召喚
+    void G_Spawn()
+    {
+        //G_C = Scene_Count * 5 - 1;
+        for (int a = (Scene_Count) * 5 - 1; a > -1; a--) 
+        {
+            G[a].gameObject.SetActive(true);
+        }
+    }
+>>>>>>> ootsuka/mock
 
     //問題設定
     void Answer_Set()
@@ -68,6 +116,7 @@ public class Game_Controller : MonoBehaviour
         {
             case 1:
                 Q_Num = Random.Range(0, 3);
+                //Q_Num = 0;
                 break;
             case 2:
                 Q_Num = Random.Range(3, 6);
@@ -89,6 +138,10 @@ public class Game_Controller : MonoBehaviour
         Question[Q_Num].gameObject.SetActive(true);
     }
     
+    void G_Count()
+    {
+
+    }
 
 
     //タップ
@@ -106,8 +159,10 @@ public class Game_Controller : MonoBehaviour
             //画面に触れたとき
             if (Input.GetMouseButtonDown(0))
             {
-                //タップしたものの名前を取得
-                Tap_Object = tap.gameObject.name;
+                Tap_Object = null;
+                //タップしたもののTAGを取得
+                Tap_Object = tap.gameObject.tag;
+                Tap_Name = tap.gameObject.name;
             }
 
             //コインだったら
@@ -126,7 +181,32 @@ public class Game_Controller : MonoBehaviour
             //Gだったら
             if (Tap_Object == "G")
             {
+<<<<<<< HEAD
                 G.GetComponent<G_Controller>().G_Die();
+=======
+                for (G_Num = 0; G_Num < 15; G_Num++)
+                {
+                    if (Tap_Name == G_Name[G_Num])
+                    {
+                        G[G_Num].GetComponent<G_Controller>().G_Die();
+                        Game_SE.GetComponent<Game_SE>().G_Die_SE();
+
+                    }
+                }
+            }
+            //Char_Gだったら
+            else if (Tap_Object == "Char_G")
+            {
+                
+                for (Char_G_Num = 0; Char_G_Num < 15; Char_G_Num++)
+                {
+                    if (Tap_Name == Char_G_Name[Char_G_Num])
+                    {
+                        Char_G[Char_G_Num].GetComponent<Char_G_Controller>().G_Die();
+                        Game_SE.GetComponent<Game_SE>().G_Die_SE();
+                    }
+                }
+>>>>>>> ootsuka/mock
             }
             //なんかだったら
 
@@ -139,13 +219,19 @@ public class Game_Controller : MonoBehaviour
 
                 //コインと重なってたObjectを確認する
                 Get_Char = Coin.GetComponent<Coin_Controller>().Tap_Char;
+<<<<<<< HEAD
                 
                 Tap_Object = null;
+=======
+                Debug.Log(Answer[A_Num[Q_Num]]);
+                Debug.Log(Get_Char);
+>>>>>>> ootsuka/mock
                 G_SE = true;
 
 
                 //合ってたら
                 if (Get_Char == Answer[A_Num[Q_Num]])
+<<<<<<< HEAD
                 {
                     var color = spriteRenderer.color;
 
@@ -165,6 +251,22 @@ public class Game_Controller : MonoBehaviour
                 else if (Get_Char != null && Get_Char != Answer[A_Num[Q_Num]])
                 {
                     //SE
+=======
+                {
+                    //SE
+                    Game_SE.GetComponent<Game_SE>().Char_SE();
+                    
+                    //文字の表示
+                    Char[Q_Num].gameObject.SetActive(true);
+                    Get_Char = null;
+                    //ムービーシーンへ
+                    Fade.gameObject.SetActive(true);
+                }
+                //違ったら
+                else if (Get_Char != null && Get_Char != Answer[A_Num[Q_Num]])
+                {
+                    //SE
+>>>>>>> ootsuka/mock
                     Game_SE.GetComponent<Game_SE>().Life_SE();
 
                     //ライフ減らす
@@ -188,8 +290,14 @@ public class Game_Controller : MonoBehaviour
     void Start()
     {
         life = 3;
+<<<<<<< HEAD
         Scene_Count += 1;
         Answer_Set();
+=======
+        //Scene_Count += 1;
+        Answer_Set();
+        G_Spawn();
+>>>>>>> ootsuka/mock
         spriteRenderer = Char[Q_Num].GetComponent<SpriteRenderer>();
     }
 
@@ -197,5 +305,4 @@ public class Game_Controller : MonoBehaviour
     {
         Tap();
     }
-
 }

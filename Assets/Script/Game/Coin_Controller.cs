@@ -11,7 +11,6 @@ public class Coin_Controller : MonoBehaviour
     //コイン移動
     public void Move_Coin()
     {
-        Debug.Log("呼ばれてるよ");
         Touch t = Input.GetTouch(0);
         //タップ確認
         Tap_Pos = new Vector3(t.position.x, t.position.y, 0);
