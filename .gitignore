@@ -1,2 +1,9 @@
 .vs/
 Library/
+obj/
+Temp/
+Unity.PackageManagerUI.Editor.csproj
+Unity.TextMeshPro.Editor.csproj
+Unity.CollabProxy.Editor.csproj
+Unity.Analytics.DataPrivacy.csproj
+Unity.TextMeshPro.csproj
