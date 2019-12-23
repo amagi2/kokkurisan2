@@ -1,4 +1,2 @@
 Library/
 .vs/
-git push origin :branch-name
-git push origin branch-name
