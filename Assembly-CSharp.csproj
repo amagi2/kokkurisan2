@@ -60,10 +60,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Script\Game\Char.cs" />
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
     <Compile Include="Assets\Script\Game\Char\Answer_Char.cs" />
     <Compile Include="Assets\Script\Game\Char\Back_UI.cs" />
     <Compile Include="Assets\Script\Game\Char\Char.cs" />
     <Compile Include="Assets\Script\Game\Char\Char_Controller.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Script\Game\Char_Controller.cs" />
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
     <Compile Include="Assets\Script\Game\Char_G_Controller.cs" />
     <Compile Include="Assets\Script\Game\Coin_Controller.cs" />
     <Compile Include="Assets\Script\Game\Fade_In.cs" />

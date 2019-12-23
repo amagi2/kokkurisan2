@@ -9,9 +9,21 @@ public class Game_Controller : MonoBehaviour
     public GameObject Coin;     //Coin_Controller
     public GameObject Paper;    //文字盤
     public GameObject Game_SE;  //SE
+<<<<<<< HEAD
 
     private string Tap_Object;  //タップ先のオブジェクト
     private string Tap_Name;    //タップ先のオブジェクトの名前
+=======
+<<<<<<< HEAD
+    public GameObject G;        //G
+
+    private string Tap_Object;  //タップ先のオブジェクト
+=======
+
+    private string Tap_Object;  //タップ先のオブジェクト
+    private string Tap_Name;    //タップ先のオブジェクトの名前
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
     private string Get_Char;    //Coin_Controllerから受け取る
 
     [SerializeField]
@@ -33,14 +45,32 @@ public class Game_Controller : MonoBehaviour
         /*35*/"YA","YU","YO",           /*37*/
         /*38*/"RA","RI","RU","RE","RO", /*42*/
         /*43*/"WA","WO","N"             /*45*/
+<<<<<<< HEAD
     };
 
+=======
+    };
+<<<<<<< HEAD
+    //答え（設定）
+    private int[] A_Num ={
+        /*SU*/12,
+        /*I*/1,
+        /*YU*/36
+    };
+
+=======
+
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
     //答え（設定）
     private int[] A_Num ={
         11,2,37
     };
 
     //透過関連
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
     SpriteRenderer spriteRenderer;
     float Add_a = 0.05f;
     float a;
@@ -56,10 +86,19 @@ public class Game_Controller : MonoBehaviour
     private GameObject[] Life = new GameObject[3];  //LifeのUI
     private int life;                               //残りLife
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    public static int Scene_Count;//シーン何回目か
+
+    bool G_SE = true;
+=======
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
     //public static int Scene_Count;//シーン何回目か
     public static int Scene_Count = 1;//体験版
 
     bool G_SE = true;
+<<<<<<< HEAD
 
     [SerializeField]
     private GameObject Fade;
@@ -70,6 +109,18 @@ public class Game_Controller : MonoBehaviour
     private int G_Num;
 
     [SerializeField]
+=======
+
+    [SerializeField]
+    private GameObject Fade;
+
+    [SerializeField]
+    private GameObject[] G = new GameObject[15];
+    private string[] G_Name = { "G (0)", "G (1)", "G (2)", "G (3)", "G (4)", "G (5)", "G (6)", "G (7)", "G (8)", "G (9)", "G (10)", "G (11)", "G (12)", "G (13)", "G (14)" };
+    private int G_Num;
+
+    [SerializeField]
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
     private GameObject[] Char_G = new GameObject[15];
     private string[] Char_G_Name = { "Char_G (0)", "Char_G (1)", "Char_G (2)", "Char_G (3)", "Char_G (4)", "Char_G (5)", "Char_G (6)", "Char_G (7)", "Char_G (8)", "Char_G (9)", "Char_G (10)", "Char_G (11)", "Char_G (12)", "Char_G (13)", "Char_G (14)" };
     private int Char_G_Num;
@@ -85,6 +136,10 @@ public class Game_Controller : MonoBehaviour
             G[a].gameObject.SetActive(true);
         }
     }
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
 
     //問題設定
     void Answer_Set()
@@ -159,6 +214,12 @@ public class Game_Controller : MonoBehaviour
             //Gだったら
             if (Tap_Object == "G")
             {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                G.GetComponent<G_Controller>().G_Die();
+=======
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
                 for (G_Num = 0; G_Num < 15; G_Num++)
                 {
                     if (Tap_Name == G_Name[G_Num])
@@ -181,6 +242,10 @@ public class Game_Controller : MonoBehaviour
                         Game_SE.GetComponent<Game_SE>().G_Die_SE();
                     }
                 }
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
             }
             //なんかだったら
 
@@ -193,15 +258,51 @@ public class Game_Controller : MonoBehaviour
 
                 //コインと重なってたObjectを確認する
                 Get_Char = Coin.GetComponent<Coin_Controller>().Tap_Char;
+<<<<<<< HEAD
                 Debug.Log(Answer[A_Num[Q_Num]]);
                 Debug.Log(Get_Char);
+=======
+<<<<<<< HEAD
+                
+                Tap_Object = null;
+=======
+                Debug.Log(Answer[A_Num[Q_Num]]);
+                Debug.Log(Get_Char);
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
                 G_SE = true;
 
 
                 //合ってたら
                 if (Get_Char == Answer[A_Num[Q_Num]])
+<<<<<<< HEAD
                 {
                     //SE
+=======
+<<<<<<< HEAD
+                {
+                    var color = spriteRenderer.color;
+
+                    //SE
+                    Game_SE.GetComponent<Game_SE>().Char_SE();
+
+                    CoolTime = Time.deltaTime;
+                    SetTime = CoolTime + 1;
+                    //文字の表示
+                    Char[Q_Num].gameObject.SetActive(true);
+                    Char[Q_Num].GetComponent<Answer_Char>().UI();
+                    Get_Char = null;
+                    //ムービーシーンへ
+                    //SceneManager.LoadScene("MovieScene");
+                }
+                //違ったら
+                else if (Get_Char != null && Get_Char != Answer[A_Num[Q_Num]])
+                {
+                    //SE
+=======
+                {
+                    //SE
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
                     Game_SE.GetComponent<Game_SE>().Char_SE();
                     
                     //文字の表示
@@ -214,6 +315,10 @@ public class Game_Controller : MonoBehaviour
                 else if (Get_Char != null && Get_Char != Answer[A_Num[Q_Num]])
                 {
                     //SE
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
                     Game_SE.GetComponent<Game_SE>().Life_SE();
 
                     //ライフ減らす
@@ -237,9 +342,20 @@ public class Game_Controller : MonoBehaviour
     void Start()
     {
         life = 3;
+<<<<<<< HEAD
         //Scene_Count += 1;
         Answer_Set();
         G_Spawn();
+=======
+<<<<<<< HEAD
+        Scene_Count += 1;
+        Answer_Set();
+=======
+        //Scene_Count += 1;
+        Answer_Set();
+        G_Spawn();
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
         spriteRenderer = Char[Q_Num].GetComponent<SpriteRenderer>();
     }
 

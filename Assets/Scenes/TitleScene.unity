@@ -221,7 +221,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766f1aab9c9167748a03275d24c29e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Fade: {fileID: 915143383}
+=======
+<<<<<<< HEAD
+=======
+  Fade: {fileID: 915143383}
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   SE: {fileID: 8300000, guid: 8226cb351f817e04397d9f83310df815, type: 3}
 --- !u!82 &352869506
 AudioSource:
@@ -319,6 +326,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
 --- !u!1 &566024949
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +585,10 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
 --- !u!1 &887909472
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +671,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &915143383
+=======
+<<<<<<< HEAD
+--- !u!1 &1801868731
+=======
+--- !u!1 &915143383
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -663,6 +687,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   - component: {fileID: 915143384}
   - component: {fileID: 915143387}
   - component: {fileID: 915143386}
@@ -751,6 +780,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   - component: {fileID: 1801868733}
   - component: {fileID: 1801868732}
   m_Layer: 0
@@ -759,7 +792,15 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 0
+=======
+<<<<<<< HEAD
+  m_IsActive: 1
+=======
+  m_IsActive: 0
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
 --- !u!212 &1801868732
 SpriteRenderer:
   m_ObjectHideFlags: 0

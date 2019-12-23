@@ -347,7 +347,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &517559404
+=======
+<<<<<<< HEAD
+--- !u!1 &519253832
+=======
+--- !u!1 &517559404
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,23 +363,65 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  - component: {fileID: 519253836}
+  - component: {fileID: 519253835}
+  - component: {fileID: 519253834}
+  - component: {fileID: 519253833}
+  m_Layer: 0
+  m_Name: Plane
+=======
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   - component: {fileID: 517559405}
   - component: {fileID: 517559408}
   - component: {fileID: 517559407}
   - component: {fileID: 517559406}
   m_Layer: 5
   m_Name: Fade_In
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 1
 --- !u!224 &517559405
 RectTransform:
+=======
+<<<<<<< HEAD
+  m_IsActive: 0
+--- !u!64 &519253833
+MeshCollider:
+=======
+  m_IsActive: 1
+--- !u!224 &517559405
+RectTransform:
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  m_GameObject: {fileID: 519253832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &519253834
+MeshRenderer:
+=======
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   m_GameObject: {fileID: 517559404}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -387,10 +437,52 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517559406
 MonoBehaviour:
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  m_GameObject: {fileID: 519253832}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &519253835
+MeshFilter:
+=======
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   m_GameObject: {fileID: 517559404}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -400,10 +492,23 @@ MonoBehaviour:
   image: {fileID: 517559407}
 --- !u!114 &517559407
 MonoBehaviour:
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  m_GameObject: {fileID: 519253832}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &519253836
+Transform:
+=======
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   m_GameObject: {fileID: 517559404}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -429,12 +534,32 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
 --- !u!222 &517559408
 CanvasRenderer:
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 517559404}
   m_CullTransparentMesh: 0
+=======
+<<<<<<< HEAD
+  m_GameObject: {fileID: 519253832}
+  m_LocalRotation: {x: 0, y: 0.70710677, z: -0.70710677, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.75, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: -90}
+=======
+  m_GameObject: {fileID: 517559404}
+  m_CullTransparentMesh: 0
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
 --- !u!1 &638907055
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +838,7 @@ VideoPlayer:
   m_TargetCamera: {fileID: 499188053}
   m_TargetTexture: {fileID: 0}
   m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialRenderer: {fileID: 519253834}
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 0
   m_AspectRatio: 2

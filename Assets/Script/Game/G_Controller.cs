@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class G_Controller : MonoBehaviour
 {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    public void G_Die()
+    {
+        Destroy(this.gameObject);
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+=======
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
     private int G_Rand;
     
     float i;
@@ -49,11 +62,23 @@ public class G_Controller : MonoBehaviour
     void Start()
     {
 
+<<<<<<< HEAD
+=======
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         G_Move();
+=======
+<<<<<<< HEAD
+
+=======
+        G_Move();
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
     }
 }

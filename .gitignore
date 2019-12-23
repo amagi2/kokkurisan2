@@ -1,2 +1,24 @@
-Library/
 .vs/
+<<<<<<< HEAD
+=======
+Library/
+obj/
+<<<<<<< HEAD
+Kokkurisan.csproj
+Assembly-CSharp.csproj
+Unity.CollabProxy.Editor.csproj
+Unity.Analytics.DataPrivacy.csproj
+Unity.PackageManagerUI.Editor.csproj
+Unity.TextMeshPro.csproj
+Unity.TextMeshPro.Editor.csproj
+こっくりさん.sln
+Temp/
+=======
+Temp/
+Unity.PackageManagerUI.Editor.csproj
+Unity.TextMeshPro.Editor.csproj
+Unity.CollabProxy.Editor.csproj
+Unity.Analytics.DataPrivacy.csproj
+Unity.TextMeshPro.csproj
+>>>>>>> ootsuka/mock
+>>>>>>> aa8eb78f4a3a631a5dc5d49c619fb34fa71f91cf
